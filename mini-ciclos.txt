@@ -1,0 +1,17 @@
+1. ¿Cuáles fueron los mini-ciclos definidos? Justifíquenlos.
+
+Mini-ciclo 1: Estructura Base y Visibilidad
+- Qué incluye: Creación del proyecto slotMachine, la clase principal SlotMachine, el método de estado ok() y los métodos de visibilidad (makeVisible, makeInvisible)[cite: 2].
+- Justificación: Decidimos empezar por aquí porque es imposible probar cualquier interacción sin tener primero el lienzo y la estructura base del simulador. Implementar la visibilidad desde el inicio nos garantizó cumplir tempranamente con el requisito de que la máquina pueda funcionar en modo invisible[cite: 2]. Además, el método ok() es transversal a todo el proyecto para registrar el éxito o fracaso de cada operación[cite: 2].
+
+Mini-ciclo 2: Gestión del Modelo (Ruedas y Símbolos)
+- Qué incluye: Implementación de los métodos de administración estructural: addWheel, delWheel, addSymbol y delSymbol[cite: 2].
+- Justificación: Antes de aplicar cualquier mecánica de juego, necesitábamos construir el modelo de datos. Este ciclo fue fundamental para resolver la lógica de las posiciones, garantizando que el usuario las enumere a partir de 1, y ajustando los límites si se ingresan valores menores a 1 o mayores al máximo[cite: 2]. También nos permitió establecer el manejo de los colores de los símbolos usando el estándar CSS[cite: 2].
+
+Mini-ciclo 3: Interacción y Mecánica del Simulador
+- Qué incluye: Los métodos que alteran y consultan el estado dinámico: spin, placeSymbol, symbols y configuration[cite: 2].
+- Justificación: Con las ruedas y símbolos ya creados en el ciclo anterior, el paso lógico natural era darle movimiento a la máquina. Agrupamos aquí todas las acciones de girar (ya sea una rueda, todas, o fijar una posición manual) junto con las consultas básicas de la disposición actual de los colores[cite: 2]. Esto dejó el simulador completamente funcional a nivel mecánico.
+
+Mini-ciclo 4: Reglas de Negocio, Usabilidad y Cierre
+- Qué incluye: Evaluación de victoria (distinctSymbols, isjackpot), cambio visual al ganar, manejo de errores con JOptionPane y el método exit()[cite: 2].
+- Justificación: Dejamos para el final las reglas del juego y la experiencia de usuario. Una vez que la máquina giraba correctamente, pudimos concentrarnos en validar si se lograba el estado ganador y asegurar que la máquina luciera diferente al alcanzarlo[cite: 2]. También integramos el control de usabilidad para mostrar mensajes especiales de error solo cuando el simulador está visible[cite: 2], cerrando así todos los requisitos del proyecto.
